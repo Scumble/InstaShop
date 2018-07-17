@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShop", "InstaShop\InstaShop.csproj", "{A46BA0CE-A418-4D98-9166-2ADC957B8636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShop.Domain", "InstaShop.Domain\InstaShop.Domain.csproj", "{6314103E-B3AB-4E23-BBE1-D45BFC66131B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShop.WebUI", "InstaShop.WebUI\InstaShop.WebUI.csproj", "{BFF21478-4560-4551-8B30-EF4E3DE4E9FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShop.UnitTests", "InstaShop.UnitTests\InstaShop.UnitTests.csproj", "{1E25EDDF-C284-48A0-A5E5-85C13E92164F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A46BA0CE-A418-4D98-9166-2ADC957B8636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46BA0CE-A418-4D98-9166-2ADC957B8636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46BA0CE-A418-4D98-9166-2ADC957B8636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46BA0CE-A418-4D98-9166-2ADC957B8636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6314103E-B3AB-4E23-BBE1-D45BFC66131B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6314103E-B3AB-4E23-BBE1-D45BFC66131B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6314103E-B3AB-4E23-BBE1-D45BFC66131B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6314103E-B3AB-4E23-BBE1-D45BFC66131B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF21478-4560-4551-8B30-EF4E3DE4E9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF21478-4560-4551-8B30-EF4E3DE4E9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF21478-4560-4551-8B30-EF4E3DE4E9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF21478-4560-4551-8B30-EF4E3DE4E9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E25EDDF-C284-48A0-A5E5-85C13E92164F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E25EDDF-C284-48A0-A5E5-85C13E92164F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E25EDDF-C284-48A0-A5E5-85C13E92164F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E25EDDF-C284-48A0-A5E5-85C13E92164F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7BE0DD2-1633-4D84-98DA-98AAB5E0B0E6}
+	EndGlobalSection
+EndGlobal

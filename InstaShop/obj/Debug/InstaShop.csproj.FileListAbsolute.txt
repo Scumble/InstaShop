@@ -1,0 +1,2 @@
+c:\users\lucky\source\repos\InstaShop\InstaShop\obj\Debug\InstaShop.csprojResolveAssemblyReference.cache
+c:\users\lucky\source\repos\InstaShop\InstaShop\obj\Debug\InstaShop.csproj.CoreCompileInputs.cache
