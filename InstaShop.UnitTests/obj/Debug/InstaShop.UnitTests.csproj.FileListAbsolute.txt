@@ -49,3 +49,6 @@ c:\users\lucky\source\repos\InstaShop\InstaShop.UnitTests\obj\Debug\InstaShop.Un
 c:\users\lucky\source\repos\InstaShop\InstaShop.UnitTests\obj\Debug\InstaShop.UnitTests.csproj.CoreCompileInputs.cache
 c:\users\lucky\source\repos\InstaShop\InstaShop.UnitTests\obj\Debug\InstaShop.UnitTests.dll
 c:\users\lucky\source\repos\InstaShop\InstaShop.UnitTests\obj\Debug\InstaShop.UnitTests.pdb
+C:\Users\lucky\source\repos\InstaShop\InstaShop.UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\lucky\source\repos\InstaShop\InstaShop.UnitTests\bin\Debug\InstaShop.Domain.dll.config
+C:\Users\lucky\source\repos\InstaShop\InstaShop.UnitTests\bin\Debug\EntityFramework.xml

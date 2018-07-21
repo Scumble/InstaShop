@@ -1,15 +1,19 @@
 ﻿@using InstaShop.Domain.Entities
-@model IEnumerable<Item>
+@using InstaShop.WebUI.Models
+@using InstaShop.WebUI.HtmlHelpers
+@model ItemsListViewModel
 
 @{
+    /**/
+
     ViewBag.Title = "Товары";
 }
 
-@foreach (var p in @Model)
+@foreach (var p in @Model.Items)
 {
-    <div>
-        <h3>@p.Name</h3>
-        <p>@p.Description</p>
-        <h4>@p.Price.ToString("# руб")</h4>
-    </div>
+    @Html.Partial("ItemSummary", p)
 }
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
