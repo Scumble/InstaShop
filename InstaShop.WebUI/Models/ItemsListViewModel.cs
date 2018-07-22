@@ -10,5 +10,6 @@ namespace InstaShop.WebUI.Models
     {
         public IEnumerable<Item> Items { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }
