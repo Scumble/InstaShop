@@ -19,11 +19,12 @@ namespace InstaShop.WebUI.Controllers
         {
             repository = repo;
         }
-        public ViewResult List(int page=1)
+        public ViewResult List(string category,int page=1)
         {
             ItemsListViewModel model = new ItemsListViewModel
             {
                 Items = repository.Items
+                     .Where(p => category == null || p.Category == category)
                      .OrderBy(item => item.ItemId)
                      .Skip((page - 1) * pageSize)
                      .Take(pageSize),
@@ -31,8 +32,12 @@ namespace InstaShop.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = repository.Items.Count()
-                }
+                    TotalItems = category == null ?
+        repository.Items.Count() :
+        repository.Items.Where(item => item.Category == category).Count()
+
+                },
+                CurrentCategory = category
             };
             return View(model);
         }
