@@ -33,9 +33,8 @@ namespace InstaShop.WebUI.Controllers
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
                     TotalItems = category == null ?
-        repository.Items.Count() :
-        repository.Items.Where(item => item.Category == category).Count()
-
+                    repository.Items.Count() :
+                    repository.Items.Where(item => item.Category == category).Count()
                 },
                 CurrentCategory = category
             };
