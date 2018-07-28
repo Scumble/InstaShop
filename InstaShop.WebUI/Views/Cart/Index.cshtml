@@ -17,22 +17,22 @@
     <tbody>
         @foreach (var line in Model.Cart.Lines)
         {
-        <tr>
-            <td class="text-center">@line.Quantity</td>
-            <td class="text-left">@line.Item.Name</td>
-            <td class="text-right">@line.Item.Price.ToString("# руб")</td>
-            <td class="text-right">
-                @((line.Quantity * line.Item.Price).ToString("# руб"))
-            </td>
-            <td>
-                @using (Html.BeginForm("RemoveFromCart", "Cart"))
-        {
-            @Html.Hidden("ItemId", line.Item.ItemId)
-            @Html.HiddenFor(x => x.ReturnUrl)
-            <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
-        }
-            </td>
-        </tr>
+            <tr>
+                <td class="text-center">@line.Quantity</td>
+                <td class="text-left">@line.Item.Name</td>
+                <td class="text-right">@line.Item.Price.ToString("# руб")</td>
+                <td class="text-right">
+                    @((line.Quantity * line.Item.Price).ToString("# руб"))
+                </td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                        @Html.Hidden("ItemId", line.Item.ItemId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
+                    }
+                </td>
+            </tr>
         }
     </tbody>
     <tfoot>
@@ -47,4 +47,5 @@
 
 <div class="text-center">
     <a class="btn btn-primary" href="@Model.ReturnUrl">Продолжить покупки</a>
+    @Html.ActionLink("Оформить заказ", "Checkout", null, new { @class = "btn btn-primary" })
 </div>
