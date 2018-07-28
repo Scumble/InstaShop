@@ -12,9 +12,33 @@ namespace InstaShop.WebUI.Controllers
     public class CartController : Controller
     {
         private IClothesRepository repository;
+        private IOrderProcessor orderProcessor;
         public CartController(IClothesRepository repo)
         {
             repository = repo;
+        }
+        public ViewResult Checkout()
+        {
+            return View(new ShippingDetails());
+        }
+        [HttpPost]
+        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        {
+            if (cart.Lines.Count() == 0)
+            {
+                ModelState.AddModelError("", "Извините, ваша корзина пуста!");
+            }
+
+            if (ModelState.IsValid)
+            {
+                orderProcessor.ProcessOrder(cart, shippingDetails);
+                cart.Clear();
+                return View("Completed");
+            }
+            else
+            {
+                return View(shippingDetails);
+            }
         }
 
         public RedirectToRouteResult AddToCart(Cart cart, int itemId, string returnUrl)
@@ -53,5 +77,9 @@ namespace InstaShop.WebUI.Controllers
         {
             return PartialView(cart);
         }
+       /* public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        {
+            return View(new ShippingDetails());
+        }*/
     }
 }
