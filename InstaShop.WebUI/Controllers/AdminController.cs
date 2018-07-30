@@ -1,4 +1,5 @@
 ﻿using InstaShop.Domain.Abstract;
+using InstaShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,27 @@ namespace InstaShop.WebUI.Controllers
         public ViewResult Index()
         {
             return View(repository.Items);
+        }
+        public ViewResult Edit(int itemId=1)
+        {
+            Item item = repository.Items
+                .FirstOrDefault(g => g.ItemId == itemId);
+            return View(item);
+        }
+        [HttpPost]
+        public ActionResult Edit(Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveItem(item);
+                TempData["message"] = string.Format("Изменения в игре \"{0}\" были сохранены", item.Name);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                // Что-то не так со значениями данных
+                return View(item);
+            }
         }
     }
 }
