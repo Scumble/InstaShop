@@ -16,5 +16,22 @@ namespace InstaShop.Domain.Concrete
         {
             get { return context.Items; }
         }
+        public void SaveItem(Item item)
+        {
+            if (item.ItemId == 0)
+                context.Items.Add(item);
+            else
+            {
+                Item dbEntry = context.Items.Find(item.ItemId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = item.Name;
+                    dbEntry.Description = item.Description;
+                    dbEntry.Price = item.Price;
+                    dbEntry.Category = item.Category;
+                }
+            }
+            context.SaveChanges();
+        }
     }
 }
