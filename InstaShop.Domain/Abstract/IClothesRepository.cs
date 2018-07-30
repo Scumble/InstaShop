@@ -10,5 +10,6 @@ namespace InstaShop.Domain.Abstract
     public interface IClothesRepository
     {
         IEnumerable<Item> Items { get; }
+        void SaveItem(Item item);
     }
 }
