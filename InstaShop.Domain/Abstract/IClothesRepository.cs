@@ -11,5 +11,6 @@ namespace InstaShop.Domain.Abstract
     {
         IEnumerable<Item> Items { get; }
         void SaveItem(Item item);
+        Item DeleteItem(int? itemId);
     }
 }
