@@ -9,6 +9,8 @@ using InstaShop.Domain.Entities;
 using InstaShop.Domain.Concrete;
 using System.Web.Mvc;
 using System.Configuration;
+using InstaShop.WebUI.Infrastructure.Concrete;
+using InstaShop.WebUI.Infrastructure.Abstract;
 
 namespace InstaShop.WebUI.Infrastructure
 {
@@ -34,7 +36,7 @@ namespace InstaShop.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IClothesRepository>().To<EFItemRepository>(); ;
+            kernel.Bind<IClothesRepository>().To<EFItemRepository>(); 
             EmailSettings emailSettings = new EmailSettings
             {
                 WriteAsFile = bool.Parse(ConfigurationManager
@@ -43,6 +45,8 @@ namespace InstaShop.WebUI.Infrastructure
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
                 .WithConstructorArgument("settings", emailSettings);
+
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
 }
