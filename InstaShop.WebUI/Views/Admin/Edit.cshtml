@@ -3,8 +3,7 @@
 @{
     ViewBag.Title = "Админ панель: редактирование товара";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    HtmlHelper.ClientValidationEnabled = false;
-    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+ 
 }
 
 <div class="panel">
@@ -12,7 +11,7 @@
         <h3>Редактирование товара «@Model.Name»</h3>
     </div>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Edit", "Admin"))
     {
         <div class="panel-body">
             @Html.HiddenFor(m => m.ItemId)
