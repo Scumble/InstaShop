@@ -33,5 +33,15 @@ namespace InstaShop.Domain.Concrete
             }
             context.SaveChanges();
         }
+        public Item DeleteItem(int? itemId)
+        {
+            Item dbEntry = context.Items.Find(itemId);
+            if (dbEntry != null)
+            {
+                context.Items.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }
