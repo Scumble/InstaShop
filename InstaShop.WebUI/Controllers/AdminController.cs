@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace InstaShop.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         IClothesRepository repository;
@@ -21,7 +22,7 @@ namespace InstaShop.WebUI.Controllers
         {
             return View(repository.Items);
         }
-        public ViewResult Edit(int itemId=1)
+        public ViewResult Edit(int itemId)
         {
             Item item = repository.Items
                 .FirstOrDefault(g => g.ItemId == itemId);
@@ -41,6 +42,21 @@ namespace InstaShop.WebUI.Controllers
                 // Что-то не так со значениями данных
                 return View(item);
             }
+        }
+        public ViewResult Create()
+        {
+            return View("Edit", new Item());
+        }
+        [HttpPost]
+        public ActionResult Delete(int? itemId)
+        {
+            Item deletedItem = repository.DeleteItem(itemId);
+            if (deletedItem != null)
+            {
+                TempData["message"] = string.Format("Игра \"{0}\" была удалена",
+                    deletedItem.Name);
+            }
+            return RedirectToAction("Index");
         }
     }
 }
